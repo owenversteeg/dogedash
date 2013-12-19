@@ -3,6 +3,7 @@
 <head>
 </head>
 <body>
+<script src="https://raw.github.com/tommoor/tinycon/master/tinycon.min.js"></script>
 	<script type="text/javascript">
 		var url = "http://www.bigrectangle.com/proxy.php?url=http://dogepay.com/frame_converter.php?v=10000&from_type=DOGE&to_type=USD";
 		var xmlhttp = new XMLHttpRequest();
@@ -10,10 +11,21 @@
     if (xmlhttp.readyState === 4){
         var dollarValue = xmlhttp.responseText.slice(xmlhttp.responseText.indexOf('$'), xmlhttp.responseText.indexOf('</font>'));
         alert(dollarValue)
+        Tinycon.setBubble(dollarValue.replace('$',''));
     }
 };
 xmlhttp.open('GET', url, true);
 xmlhttp.send(null);  // No data need to send along with the request.
+Tinycon.setOptions({
+    width: 20,
+    height: 20,
+    font: '8px serif',
+    colour: '#000',
+    background: 'white',
+    fallback: true,
+    abbreviate: false
+});
+
 	</script>
 </body>
 </html>
