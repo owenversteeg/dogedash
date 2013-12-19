@@ -24,7 +24,7 @@ var url = "http://www.bigrectangle.com/proxy.php?url=http://dogepay.com/frame_co
 		xmlhttp.onreadystatechange = function() {
     		if (xmlhttp.readyState === 4){
         		var dollarValue = xmlhttp.responseText.slice(xmlhttp.responseText.indexOf('$'), xmlhttp.responseText.indexOf('</font>'));
-	        	alert(dollarValue)
+	        	//alert(dollarValue)
         		Tinycon.setBubble(Math.round(dollarValue.replace('$','')*10)/10);
 	        	console.log(dollarValue)
 	        	price.innerText = dollarValue;
