@@ -8,7 +8,8 @@
 		var xmlhttp = new XMLHttpRequest();
 		xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState === 4){
-        alert(xmlhttp.readyState);
+        var dollarValue = xmlhttp.responseText.slice(xmlhttp.responseText.indexOf('$'), xmlhttp.responseText.indexOf('</font>'));
+        alert(dollarValue)
     }
 };
 xmlhttp.open('GET', url, true);
