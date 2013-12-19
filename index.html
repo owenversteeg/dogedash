@@ -23,12 +23,13 @@ var url = "http://www.bigrectangle.com/proxy.php?url=http://dogepay.com/frame_co
 		function reloadIcon() {
 		xmlhttp.onreadystatechange = function() {
     		if (xmlhttp.readyState === 4){
+    			console.log(xmlhttp.responseText)
         		var dollarValue = xmlhttp.responseText.slice(xmlhttp.responseText.indexOf('$'), xmlhttp.responseText.indexOf('</font>'));
 	        	//alert(dollarValue)
         		Tinycon.setBubble(Math.round(dollarValue.replace('$','')));
-	        	console.log(dollarValue)
-	        	price.innerText = dollarValue;
+	        	console.log(dollarValue);
 	        	document.title = dollarValue;
+	        	price.innerText = dollarValue;
     		}
     
     		
